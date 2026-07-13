@@ -1,0 +1,31 @@
+name: Java Push Demo
+
+on: 
+  push:
+  branches:
+    - main
+
+  jobs:
+    java-demo:
+      runs-on: ubuntu-latest
+      steps:
+      - name: Checkout the Repository
+        uses: actions/checkout@v4
+
+      - name: Install Java  Runtime
+        used : actions/setup-java@v4
+        with: 
+          distribution:  'temurin'
+          java-version: '17'
+
+      - name: Check Java version
+        run: java -version
+
+      - name: compile java file
+        run: javac HelloWorld.java
+
+      - name: Run the Java Application
+        run: java HelloWorld
+
+       -
+     
