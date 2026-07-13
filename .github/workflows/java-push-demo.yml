@@ -2,12 +2,13 @@ name: Java Push Demo
 
 on: 
   push:
-  branches:
-    - main
+    branches:
+      - main
 
   jobs:
     java-demo:
       runs-on: ubuntu-latest
+      
       steps:
       - name: Checkout the Repository
         uses: actions/checkout@v4
