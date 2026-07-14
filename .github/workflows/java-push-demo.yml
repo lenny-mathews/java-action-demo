@@ -5,16 +5,15 @@ on:
     branches:
       - main
 
-  jobs:
+jobs:
     java-demo:
       runs-on: ubuntu-latest
-      
       steps:
       - name: Checkout the Repository
         uses: actions/checkout@v4
 
-      - name: Install Java  Runtime
-        used : actions/setup-java@v4
+      - name: Setup Java  Runtime
+        uses: actions/setup-java@v4
         with: 
           distribution:  'temurin'
           java-version: '17'
@@ -27,6 +26,4 @@ on:
 
       - name: Run the Java Application
         run: java HelloWorld
-
-       -
-     
+        
